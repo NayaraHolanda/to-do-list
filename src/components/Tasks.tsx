@@ -19,26 +19,29 @@ export function Tasks({ tasks }: TasksProps) {
           <span>0</span>
         </div>
       </div>
-      <div className={`${styles.tasks} ${styles.tasksEmpty}`}>
-        <img src={clipboard} alt="" width={56} height={56} />
-        <p>
-          <strong>Você ainda não tem tarefas cadastradas</strong>
-          <br />
-          Crie tarefas e organize seus itens a fazer
-        </p>
-      </div>
-      <div className={`${styles.tasks}`}>
-        {tasks.map((task) => {
-          return (
-            <Task
-              key={task.id}
-              id={task.id}
-              description={task.description}
-              isCompleted={task.isCompleted}
-            />
-          )
-        })}
-      </div>
+      {tasks.length !== 0 ? (
+        <div className={`${styles.tasks}`}>
+          {tasks.map((task) => {
+            return (
+              <Task
+                key={task.id}
+                id={task.id}
+                description={task.description}
+                isCompleted={task.isCompleted}
+              />
+            )
+          })}
+        </div>
+      ) : (
+        <div className={`${styles.tasks} ${styles.tasksEmpty}`}>
+          <img src={clipboard} alt="" width={56} height={56} />
+          <p>
+            <strong>Você ainda não tem tarefas cadastradas</strong>
+            <br />
+            Crie tarefas e organize seus itens a fazer
+          </p>
+        </div>
+      )}
     </div>
   )
 }

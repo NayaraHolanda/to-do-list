@@ -1,14 +1,10 @@
 .container {
-  margin: 65px auto;
+  margin: 90px auto 64px auto;
   max-width: 736px;
 }
 .labels {
-  border-bottom: 0.5px var(--gray-400) solid;
   display: flex;
   justify-content: space-between;
-}
-.labels div {
-  margin-bottom: 24px;
 }
 .labels strong {
   font-size: 0.875rem;
@@ -32,8 +28,12 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin: 24px 0;
 }
 .tasksEmpty {
+  border-top: 0.5px var(--gray-400) solid;
   gap: 16px;
-  margin: 64px 0;
+}
+.tasksEmpty img {
+  margin-top: 64px;
 }
