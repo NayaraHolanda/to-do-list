@@ -8,16 +8,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
-.newTask {
+.newTaskForm {
   display: flex;
   gap: 8px;
   max-width: 736px;
-  position: fixed;
+  position: absolute;
   top: 173px;
   width: 100%;
 }
-.newTask input {
+.newTaskForm input {
   background-color: var(--gray-500);
   border: 0;
   border-radius: 8px;
@@ -26,10 +27,10 @@
   padding: 16px;
   width: 100%;
 }
-.newTask input:focus {
+.newTaskForm input:focus {
   box-shadow: 0 0 0 0.5px var(--purple-dark);
 }
-.newTask input[data-filled="true"] {
+.newTaskForm input[data-filled="true"] {
   color: var(--gray-100);
 }
 .header button {

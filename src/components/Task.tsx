@@ -1,12 +1,17 @@
 import styles from './Task.module.css'
 import { Trash } from 'phosphor-react'
 
-export function Task() {
+export interface TaskType {
+  id: number
+  description: string
+  isCompleted: boolean
+}
+
+export function Task({ description, isCompleted }: TaskType) {
   return (
     <div className={styles.container}>
       <label className={styles.label}>
-        Integer urna interdum massa libero auctor neque turpis turpis semper.
-        Duis vel sed fames integer.
+        <span className={styles.description}>{description}</span>
         <input type="checkbox" />
         <span className={styles.checkmark}></span>
       </label>

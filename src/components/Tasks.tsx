@@ -1,8 +1,12 @@
 import clipboard from '../assets/clipboard.svg'
-import { Task } from './Task'
+import { Task, TaskType } from './Task'
 import styles from './Tasks.module.css'
 
-export function Tasks() {
+interface TasksProps {
+  tasks: TaskType[]
+}
+
+export function Tasks({ tasks }: TasksProps) {
   return (
     <div className={styles.container}>
       <div className={styles.labels}>
@@ -24,7 +28,16 @@ export function Tasks() {
         </p>
       </div>
       <div className={`${styles.tasks}`}>
-        <Task />
+        {tasks.map((task) => {
+          return (
+            <Task
+              key={task.id}
+              id={task.id}
+              description={task.description}
+              isCompleted={task.isCompleted}
+            />
+          )
+        })}
       </div>
     </div>
   )
