@@ -14,7 +14,7 @@ export function Tasks({ tasks, completeTask, deleteTask }: TasksProps) {
       <div className={styles.labels}>
         <div>
           <strong className={styles.createdTaskLabel}>Tarefas criadas</strong>
-          <span>0</span>
+          <span>{tasks.length}</span>
         </div>
         <div>
           <strong className={styles.completedTaskLabel}>Concluídas</strong>
