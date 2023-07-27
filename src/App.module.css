@@ -9,10 +9,6 @@
   flex-direction: column;
   justify-content: center;
 }
-.logo {
-  height: 48px;
-  width: 126px;
-}
 .newTask {
   display: flex;
   gap: 8px;
@@ -46,11 +42,10 @@
   cursor: pointer;
   display: flex;
   font-family: Inter;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   gap: 8px;
   justify-content: center;
-  line-height: 19.6px;
   outline: 0;
   padding: 16px;
 }

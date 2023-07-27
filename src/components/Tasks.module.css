@@ -1,0 +1,38 @@
+.container {
+  margin: 65px auto;
+  max-width: 736px;
+}
+.labels {
+  border-bottom: 0.5px var(--gray-400) solid;
+  display: flex;
+  justify-content: space-between;
+}
+.labels div {
+  margin-bottom: 24px;
+}
+.labels strong {
+  font-size: 0.875rem;
+  margin-right: 8px;
+}
+.createdTaskLabel {
+  color: var(--blue);
+}
+.completedTaskLabel {
+  color: var(--purple);
+}
+.labels span {
+  background-color: var(--gray-400);
+  border-radius: 999px;
+  color: var(--gray-200);
+  font-size: 0.75rem;
+  padding: 2px 8px;
+}
+.tasks {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.tasksEmpty {
+  gap: 16px;
+  margin: 64px 0;
+}

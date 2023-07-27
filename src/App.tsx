@@ -1,9 +1,10 @@
 import { ChangeEvent, useState } from 'react'
 import styles from './App.module.css'
 import logo from './assets/logo.svg'
-import plus from './assets/plus.svg'
+import { Tasks } from './components/Tasks'
+import { PlusCircle } from 'phosphor-react'
 
-function App() {
+export function App() {
   const [newTask, setNewTask] = useState('')
 
   function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
@@ -12,7 +13,7 @@ function App() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <img src={logo} className="logo" alt="ToDo Logotipo" />
+        <img src={logo} alt="ToDo Logotipo" width={126} height={48} />
         <div className={styles.newTask}>
           <input
             type="text"
@@ -25,15 +26,13 @@ function App() {
           />
           <button type="button">
             Criar
-            <img src={plus} alt="plus" width="16" height="16" />
+            <PlusCircle size={16} />
           </button>
         </div>
       </header>
       <main>
-        <h1>Teste</h1>
+        <Tasks />
       </main>
     </div>
   )
 }
-
-export default App
