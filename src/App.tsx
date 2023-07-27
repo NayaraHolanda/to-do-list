@@ -63,6 +63,14 @@ export function App() {
     }
   }
 
+  function deleteTask(taskToDelete: number) {
+    const tasksWithoutDeletedOne = tasks.filter((task) => {
+      return task.id !== taskToDelete
+    })
+
+    setTasks(tasksWithoutDeletedOne)
+  }
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -84,7 +92,7 @@ export function App() {
         </form>
       </header>
       <main>
-        <Tasks tasks={tasks} />
+        <Tasks tasks={tasks} deleteTask={deleteTask} />
       </main>
     </div>
   )
