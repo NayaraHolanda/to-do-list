@@ -9,15 +9,28 @@ export interface TaskType {
 
 interface TaskProps {
   task: TaskType
+  onCompleteTask: (taskId: number) => void
   onDeleteTask: (taskId: number) => void
 }
 
-export function Task({ task, onDeleteTask }: TaskProps) {
+export function Task({ task, onCompleteTask, onDeleteTask }: TaskProps) {
   return (
     <div className={styles.container}>
       <label className={styles.label}>
-        <span className={styles.description}>{task.description}</span>
-        <input type="checkbox" />
+        <span
+          className={`${styles.description} ${
+            task.isCompleted ? styles.checked : styles.unchecked
+          }`}
+        >
+          {task.description}
+        </span>
+        <input
+          type="checkbox"
+          onChange={() => {
+            onCompleteTask(task.id)
+          }}
+          checked={task.isCompleted}
+        />
         <span className={styles.checkmark}></span>
       </label>
       <button type="button" onClick={() => onDeleteTask(task.id)}>

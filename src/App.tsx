@@ -63,6 +63,18 @@ export function App() {
     }
   }
 
+  function completeTask(taskToComplete: number) {
+    const tasksWithCompletedOne = tasks.map((task) => {
+      if (task.id === taskToComplete) {
+        return { ...task, isCompleted: !task.isCompleted }
+      }
+
+      return task
+    })
+
+    setTasks(tasksWithCompletedOne)
+  }
+
   function deleteTask(taskToDelete: number) {
     const tasksWithoutDeletedOne = tasks.filter((task) => {
       return task.id !== taskToDelete
@@ -92,7 +104,11 @@ export function App() {
         </form>
       </header>
       <main>
-        <Tasks tasks={tasks} deleteTask={deleteTask} />
+        <Tasks
+          tasks={tasks}
+          completeTask={completeTask}
+          deleteTask={deleteTask}
+        />
       </main>
     </div>
   )

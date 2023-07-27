@@ -26,8 +26,14 @@
   width: 0;
 }
 .description {
-  color: var(--gray-100);
   font-size: 0.875rem;
+}
+.checked {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+.unchecked {
+  color: var(--gray-100);
 }
 .checkmark {
   border: 2px solid var(--blue);

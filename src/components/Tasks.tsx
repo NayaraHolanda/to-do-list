@@ -4,10 +4,11 @@ import styles from './Tasks.module.css'
 
 interface TasksProps {
   tasks: TaskType[]
+  completeTask: (taskId: number) => void
   deleteTask: (taskId: number) => void
 }
 
-export function Tasks({ tasks, deleteTask }: TasksProps) {
+export function Tasks({ tasks, completeTask, deleteTask }: TasksProps) {
   return (
     <div className={styles.container}>
       <div className={styles.labels}>
@@ -23,7 +24,14 @@ export function Tasks({ tasks, deleteTask }: TasksProps) {
       {tasks.length !== 0 ? (
         <div className={`${styles.tasks}`}>
           {tasks.map((task) => {
-            return <Task key={task.id} task={task} onDeleteTask={deleteTask} />
+            return (
+              <Task
+                key={task.id}
+                task={task}
+                onCompleteTask={completeTask}
+                onDeleteTask={deleteTask}
+              />
+            )
           })}
         </div>
       ) : (
