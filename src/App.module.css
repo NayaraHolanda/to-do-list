@@ -2,6 +2,11 @@
   display: grid;
   grid-template-rows: 200px 1fr;
 }
+
+.container main {
+  margin: 0 64px;
+}
+
 .header {
   align-items: center;
   background-color: var(--gray-700);
@@ -10,14 +15,16 @@
   justify-content: center;
   position: relative;
 }
+
 .newTaskForm {
   display: flex;
   gap: 8px;
   max-width: 736px;
   position: absolute;
   top: 173px;
-  width: 100%;
+  width: calc(100% - 128px);
 }
+
 .newTaskForm input {
   background-color: var(--gray-500);
   border: 0;
@@ -27,12 +34,15 @@
   padding: 16px;
   width: 100%;
 }
+
 .newTaskForm input:focus {
   box-shadow: 0 0 0 0.5px var(--purple-dark);
 }
+
 .newTaskForm input[data-filled="true"] {
   color: var(--gray-100);
 }
+
 .header button {
   align-items: center;
   background-color: var(--blue-dark);
@@ -50,6 +60,29 @@
   outline: 0;
   padding: 16px;
 }
+
 .header button:hover {
   background-color: var(--blue);
+}
+
+@media (max-width: 360px) {
+  .newTaskForm {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .newTaskForm {
+    width: calc(100% - 64px);
+  }
+  .container main {
+    margin: 0 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
 }

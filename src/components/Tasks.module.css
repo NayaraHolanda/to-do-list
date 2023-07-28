@@ -2,20 +2,25 @@
   margin: 90px auto 64px auto;
   max-width: 736px;
 }
+
 .labels {
   display: flex;
   justify-content: space-between;
 }
+
 .labels strong {
   font-size: 0.875rem;
   margin-right: 8px;
 }
+
 .createdTaskLabel {
   color: var(--blue);
 }
+
 .completedTaskLabel {
   color: var(--purple);
 }
+
 .labels span {
   background-color: var(--gray-400);
   border-radius: 999px;
@@ -23,6 +28,7 @@
   font-size: 0.75rem;
   padding: 2px 8px;
 }
+
 .tasks {
   align-items: center;
   display: flex;
@@ -30,10 +36,19 @@
   gap: 12px;
   margin: 24px 0;
 }
+
 .tasksEmpty {
   border-top: 0.5px var(--gray-400) solid;
   gap: 16px;
 }
+
 .tasksEmpty img {
   margin-top: 64px;
+}
+
+@media (max-width: 640px) {
+  .labels {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
 }

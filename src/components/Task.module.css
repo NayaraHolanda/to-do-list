@@ -9,6 +9,7 @@
   padding: 16px;
   width: 100%;
 }
+
 .label {
   -moz-user-select: none;
   -ms-user-select: none;
@@ -19,22 +20,27 @@
   position: relative;
   user-select: none;
 }
+
 .label input {
   cursor: pointer;
   height: 0;
   opacity: 0;
   width: 0;
 }
+
 .description {
   font-size: 0.875rem;
 }
+
 .checked {
   color: var(--gray-300);
   text-decoration: line-through;
 }
+
 .unchecked {
   color: var(--gray-100);
 }
+
 .checkmark {
   border: 2px solid var(--blue);
   border-radius: 999px;
@@ -45,24 +51,30 @@
   top: 0;
   width: 14.82px;
 }
+
 .label:hover input ~ .checkmark {
   border-color: var(--blue-dark);
 }
+
 .label input:checked ~ .checkmark {
   background-color: var(--purple-dark);
   border: 0;
 }
+
 .label:hover input:checked ~ .checkmark {
   background-color: var(--purple);
 }
+
 .checkmark:after {
   content: "";
   display: none;
   position: absolute;
 }
+
 .label input:checked ~ .checkmark:after {
   display: block;
 }
+
 .label .checkmark:after {
   -ms-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
@@ -76,6 +88,7 @@
   transform-origin: 0 0;
   width: 7.31px;
 }
+
 .container button {
   background: transparent;
   border: 0;
@@ -86,6 +99,7 @@
   margin-left: 12px;
   padding: 5px 5.5px;
 }
+
 .container button:hover {
   background-color: var(--gray-400);
   color: var(--danger);
