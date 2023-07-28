@@ -9,6 +9,10 @@ interface TasksProps {
 }
 
 export function Tasks({ tasks, completeTask, deleteTask }: TasksProps) {
+  const numberOfTasksCompleted = tasks.reduce((amount, task) => {
+    return task.isCompleted ? amount + 1 : amount
+  }, 0)
+
   return (
     <div className={styles.container}>
       <div className={styles.labels}>
@@ -18,7 +22,11 @@ export function Tasks({ tasks, completeTask, deleteTask }: TasksProps) {
         </div>
         <div>
           <strong className={styles.completedTaskLabel}>Concluídas</strong>
-          <span>0</span>
+          <span>
+            {tasks.length !== 0
+              ? `${numberOfTasksCompleted} de ${tasks.length}`
+              : 0}
+          </span>
         </div>
       </div>
       {tasks.length !== 0 ? (

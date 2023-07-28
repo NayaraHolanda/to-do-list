@@ -22,19 +22,19 @@ const tasksDefault: TaskType[] = [
     id: 3,
     description:
       'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    isCompleted: true,
+    isCompleted: false,
   },
   {
     id: 4,
     description:
       'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    isCompleted: false,
+    isCompleted: true,
   },
   {
     id: 5,
     description:
       'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    isCompleted: false,
+    isCompleted: true,
   },
 ]
 
@@ -68,7 +68,6 @@ export function App() {
       if (task.id === taskToComplete) {
         return { ...task, isCompleted: !task.isCompleted }
       }
-
       return task
     })
 
